@@ -1,0 +1,17 @@
+.break {
+	display: block;
+}
+
+.no_break {
+	display: inline-block;
+}
+
+.top {
+	vertical-align: top;
+}
+
+label.right {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
