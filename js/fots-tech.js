@@ -30,7 +30,7 @@ with({tech:fots.technology["201410041529"]}) {
 	tech.description = "";
 	tech.stacks = {};
 	tech.stacks.shield = "t.shield = design.shield * ui.level * 0.33;";
-	tech.stacks.cost = "t.cost = design.baseCost * 0.15;";
+	tech.stacks.cost = {"surchage":"t.cost = design.baseCost * 0.15;"};
 	tech.ui = {};
 };
 
@@ -39,6 +39,6 @@ with({tech:fots.technology["201410041606"]}) {
 	tech.name = "Power Conduits";
 	tech.description = "";
 	tech.stacks = {};
-	tech.stacks.cost = "t.cost = design.baseCost * 0.15;";
+	tech.stacks.cost = {"surchage": "t.cost = design.baseCost * 0.15;"};
 	tech.ui = {};
 };
