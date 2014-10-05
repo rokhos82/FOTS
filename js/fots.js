@@ -134,5 +134,7 @@ fots.initialize = function() {
 	$("#pst").val("3");
 	$("#hull").change();
 
-	fots.ui.build(fots.equipment[201410041610].ui,"#equipment");
+	fots.ui.build(fots.equipment[201410041610],"#equipment");
 };
+
+// robocopy . c:\xampp\htdocs\fots /E /XF .git* /XD .git

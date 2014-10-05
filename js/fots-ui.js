@@ -1,7 +1,10 @@
 fots.ui = {};
 
 fots.ui.build = function(defObj,root) {
-	for(key in defObj) {
+	var fs = $("<fieldset></fieldset>");
+	fs.append("<legend>"+defObj.name+"</legend>");
+	var ui = defObj.ui;
+	for(key in ui) {
 		var value = defObj[key];
 		var div = $("<div></div>");
 		for(k in value) {
@@ -17,6 +20,7 @@ fots.ui.build = function(defObj,root) {
 				div.append(e);
 			}
 		}
-		$(root).append(div);
+		fs.append(div);
 	}
+	$(root).append(fs);
 };
