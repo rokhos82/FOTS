@@ -100,7 +100,7 @@ fots.funcs.baseHullChange = function() {
 	var hull = $("#hull").val();
 	var pst = $("#pst").val();
 	var equipment = Math.ceil(fots.core.pst[pst].ep["starship"] * hull);
-	$("#equipment").val(equipment);
+	$("#EP").val(equipment);
 	$("#hullStat").change();
 };
 
@@ -133,4 +133,6 @@ fots.initialize = function() {
 	
 	$("#pst").val("3");
 	$("#hull").change();
+
+	fots.ui.build(fots.equipment[201410041610].ui,"#equipment");
 };

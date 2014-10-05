@@ -6,6 +6,7 @@
 		<script lang="javascript" src="js/fots.js" type="text/javascript"></script>
 		<script lang="javascript" src="js/fots-tech.js" type="text/javascript"></script>
 		<script lang="javascript" src="js/fots-equip.js" type="text/javascript"></script>
+		<script lang="javascript" src="js/fots-ui.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<fieldset>
@@ -14,30 +15,30 @@
 				<div><label for="name" class="right">Ship Name:</label><input id="name" name="name" type="text" placeholder="Enter unit name here" /></div>
 				<div><label for="pst" class="right">PST Level:</label><select id="pst"></select></div>
 				<div><label for="hull" class="right">Base Hull:</label><input id="hull" name="hull" type="number" min="1" value="1" /></div>
-				<div class="top"><label for="equipment" class="right">Equipment:</label><input id="equipment" name="equipment" type="number" readonly /></div>
+				<div class="top"><label for="EP" class="right">Equipment:</label><input id="EP" name="EP" type="number" readonly /></div>
 			</div>
 			<div class="no_break top">
-				<div><label for="beamStat" class="right">Beam:</label><input id="beamStat" type="text" readyonly /></div>
+				<div><label for="beamStat" class="right">Beam:</label><input id="beamStat" type="text" readonly /></div>
 				<div><label for="shieldStat" class="right">Shield:</label><input id="shieldStat" type="text" readonly /></div>
 				<div><label for="torpedoStat" class="right">Torpedo:</label><input id="torpedoStat" type="text" readonly /></div>
 				<div><label for="hullStat" class="right">Hull:</label><input id="hullStat" type="text" readonly /></div>
 				<div><label for="costStat" class="right">Cost:</label><input id="costStat" type="text" readonly /></div>
 			</div>
-			<fieldset>
+			<fieldset id="technology">
 				<legend>Technology</legend>
 				<select id="usedTech" size="10" class="no_break"></select>
 				<div class="no_break top">
-					<button class="break">&lt;&lt;</button>
-					<button class="break">&gt;&gt;</button>
+					<button id="techAdd" class="break">&lt;&lt;</button>
+					<button id="techRemove" class="break">&gt;&gt;</button>
 				</div>
 				<select id="availableTech" size="10" class="no_break"></select>
 			</fieldset>
-			<fieldset>
+			<fieldset id="equipment">
 				<legend>Equipment</legend>
 				<select id="equiped" size="10" class="no_break"></select>
 				<div class="no_break top">
-					<button class="break">&lt;&lt;</button>
-					<button class="break">&gt;&gt;</button>
+					<button id="equipAdd" class="break">&lt;&lt;</button>
+					<button id="equipRemove" class="break">&gt;&gt;</button>
 				</div>
 				<select id="available" size="10" class="no_break"></select>
 			</fieldset>

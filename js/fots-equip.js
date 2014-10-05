@@ -7,6 +7,14 @@ fots.defaultEquipment = function() {
 	this.stacks = {};
 };
 
+fots.equipment["201410041444"] = new fots.defaultTech();
+with({tech:fots.equipment["201410041444"]}) {
+	tech.name = "Spinal Mount";
+	tech.description = "";
+	tech.stacks = {};
+	tech.ui = {};
+};
+
 fots.equipment[201410041610] = new fots.defaultEquipment();
 with({e:fots.equipment[201410041610]}) {
 	e.name = "Beam Weapon";

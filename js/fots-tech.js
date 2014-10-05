@@ -7,14 +7,6 @@ fots.defaultTech = function() {
 	this.ui = {};
 };
 
-fots.technology["201410041444"] = new fots.defaultTech();
-with({tech:fots.technology["201410041444"]}) {
-	tech.name = "Spinal Mount";
-	tech.description = "";
-	tech.stacks = {};
-	tech.ui = {};
-};
-
 fots.technology["201410041446"] = new fots.defaultTech();
 with({tech:fots.technology["201410041446"]}) {
 	tech.name = "High Tech Industrial Hulls";
