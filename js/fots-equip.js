@@ -39,13 +39,13 @@ with({e:fots.equipment["E201410041707"]}) {
 	e.id = "E201410041707";
 	e.tooltip = "Adds standard armor rating to the unit.";
 	e.ui = {
-		1: {"label":"Armor per Hull:","input":"armorHull"}
+		1: {"label":"Armor per Hull:","input":["armorHull",function() { fots.currentUnit.calculateHull(); },0.5]}
 	};
 	e.stacks.costs = {
 		"base": "e.cost = e.rating * fots.pointCost * 0.5;"
 	};
 	e.stacks.hull = {
-		"final": "e.hull = Math.ceil(design.hull * e.armorHull); e.rating = e.hull;"
+		"final": "e.hull = Math.ceil(design.hull * $(\"#armorHull\").val()); e.rating = e.hull; design.hull += e.hull;"
 	};
 };
 

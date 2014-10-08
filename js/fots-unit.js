@@ -46,10 +46,31 @@ fots.unit.prototype.calculateHull = function() {
 	}
 
 	// Calculate sub hull
+	for(var k in this.equipment) {
+		var e = this.equipment[k];
+		if(e.stacks.hull["sub"]) {
+			var code = e.stacks.hull["sub"];
+			eval(code);
+		}
+	}
 
 	// Calculate surcharge hull
+	for(var k in this.equipment) {
+		var e = this.equipment[k];
+		if(e.stacks.hull["surcharge"]) {
+			var code = e.stacks.hull["surcharge"];
+			eval(code);
+		}
+	}
 
 	// Calculate final hull
+	for(var k in this.equipment) {
+		var e = this.equipment[k];
+		if(e.stacks.hull["final"]) {
+			var code = e.stacks.hull["final"];
+			eval(code);
+		}
+	}
 
 	$("#hullStat").val(design.hull);
 };
