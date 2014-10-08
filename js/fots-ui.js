@@ -17,7 +17,14 @@ fots.ui.build = function(defObj,root) {
 			}
 			else if(k == "input") {
 				e = $("<input type='text' />");
-				e.attr("id",v);
+				if(v instanceof Array) {
+					e.attr("id",v[0]);
+					e.blur(v[1]);
+					e.val(v[2]);
+				}
+				else {
+					e.attr("id",v);
+				}
 				div.append(e);
 			}
 		}

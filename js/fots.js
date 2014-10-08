@@ -103,12 +103,7 @@ fots.funcs.baseHullChange = function() {
 	var pst = $("#pst").val();
 	var equipment = Math.ceil(fots.core.pst[pst].ep["starship"] * hull);
 	$("#EP").val(equipment);
-	$("#hullStat").change();
-};
-
-fots.funcs.finalHullChange = function() {
-	var base = $("#hull").val();
-	$("#hullStat").val(base);
+	fots.currentUnit.calculateHull();
 };
 
 fots.funcs.updateName = function() {
@@ -130,7 +125,6 @@ fots.initialize = function() {
 	// Setup event handlers
 	$("#hull").change(fots.funcs.baseHullChange);
 	$("#pst").change(fots.funcs.baseHullChange);
-	$("#hullStat").change(fots.funcs.finalHullChange);
 	$("#equipAdd").click(fots.funcs.addEquipment);
 	$("#name").blur(fots.funcs.updateName);
 
@@ -151,6 +145,7 @@ fots.initialize = function() {
 	});
 	
 	$("#pst").val("3");
+	$("#hull").val("6")
 	$("#hull").change();
 };
 

@@ -48,3 +48,17 @@ with({e:fots.equipment["E201410041707"]}) {
 		"final": "e.hull = Math.ceil(design.hull * e.armorHull); e.rating = e.hull;"
 	};
 };
+
+fots.equipment["E201410072112"] = new fots.defaultEquipment();
+with({e:fots.equipment["E201410072112"]}) {
+	e.name = "Sturctural Reinforcement";
+	e.id = "E201410072112";
+	e.tooltip = "Adds base hull to the unit.";
+	e.ui = {
+		1: {"label":"Point per Space:","input":["structuralRating",function() { fots.currentUnit.calculateHull(); },1]},
+		2: {"label":"Quantity:","input":["structuralQuantity",function() {fots.currentUnit.calculateHull(); },1]}
+	};
+	e.stacks.hull = {
+		"base": "design.hull += $(\"#structuralRating\").val() * $(\"#structuralQuantity\").val();"
+	};
+}

@@ -30,3 +30,26 @@ fots.unit.prototype.checkEquipment = function(eid) {
 	else
 		return false;
 };
+
+fots.unit.prototype.calculateHull = function() {
+	var design = this;
+
+	design.hull = parseInt($("#hull").val());
+
+	// Calculate base hull
+	for(var k in this.equipment) {
+		var e = this.equipment[k];
+		if(e.stacks.hull["base"]) {
+			var code = e.stacks.hull["base"];
+			eval(code);
+		}
+	}
+
+	// Calculate sub hull
+
+	// Calculate surcharge hull
+
+	// Calculate final hull
+
+	$("#hullStat").val(design.hull);
+};
