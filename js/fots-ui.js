@@ -5,7 +5,7 @@ fots.ui.build = function(defObj,root) {
 	fs.append("<legend>"+defObj.name+"</legend>");
 	var ui = defObj.ui;
 	for(key in ui) {
-		var value = defObj[key];
+		var value = ui[key];
 		var div = $("<div></div>");
 		for(k in value) {
 			var v = value[k];
