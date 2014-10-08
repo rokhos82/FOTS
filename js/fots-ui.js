@@ -2,6 +2,7 @@ fots.ui = {};
 
 fots.ui.build = function(defObj,root) {
 	var fs = $("<fieldset></fieldset>");
+	fs.attr("id",defObj.id)
 	fs.append("<legend>"+defObj.name+"</legend>");
 	var ui = defObj.ui;
 	for(key in ui) {

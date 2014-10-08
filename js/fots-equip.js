@@ -2,22 +2,25 @@ fots.equipment = {};
 
 fots.defaultEquipment = function() {
 	this.name = "";
+	this.id = "";
 	this.tooltip = "";
 	this.ui = {};
 	this.stacks = {};
 };
 
-fots.equipment["201410041444"] = new fots.defaultTech();
-with({tech:fots.equipment["201410041444"]}) {
-	tech.name = "Spinal Mount";
-	tech.description = "";
-	tech.stacks = {};
-	tech.ui = {};
+fots.equipment["E201410041444"] = new fots.defaultTech();
+with({e:fots.equipment["E201410041444"]}) {
+	e.name = "Spinal Mount";
+	e.id = "E201410041444";
+	e.description = "";
+	e.stacks = {};
+	e.ui = {};
 };
 
-fots.equipment[201410041610] = new fots.defaultEquipment();
-with({e:fots.equipment[201410041610]}) {
+fots.equipment["E201410041610"] = new fots.defaultEquipment();
+with({e:fots.equipment["E201410041610"]}) {
 	e.name = "Beam Weapon";
+	e.id = "E201410041444";
 	e.tooltip = "Adds a beam volley to the unit.";
 	e.ui = {
 		1: {"label":"Rating per Beam:","input":"beamRating"},
@@ -30,9 +33,10 @@ with({e:fots.equipment[201410041610]}) {
 	};
 };
 
-fots.equipment[201410041707] = new fots.defaultEquipment();
-with({e:fots.equipment[201410041707]}) {
+fots.equipment["E201410041707"] = new fots.defaultEquipment();
+with({e:fots.equipment["E201410041707"]}) {
 	e.name = "Ablative Armor";
+	e.id = "E201410041707";
 	e.tooltip = "Adds standard armor rating to the unit.";
 	e.ui = {
 		1: {"label":"Armor per Hull:","input":"armorHull"}

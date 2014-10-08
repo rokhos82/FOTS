@@ -2,6 +2,8 @@ var fots = {};
 
 fots.pointCost = 10/3;
 
+fots.currentUnit = null;
+
 fots.core = {};
 
 fots.core.pst = {};
@@ -109,11 +111,28 @@ fots.funcs.finalHullChange = function() {
 	$("#hullStat").val(base);
 };
 
+fots.funcs.updateName = function() {
+	fots.currentUnit.updateName($("#name").val());
+};
+
+fots.funcs.addEquipment = function() {
+	var eid = $("#available").val();
+	if(fots.equipment[eid]) {
+		fots.currentUnit.addEquipment(eid);
+	}
+	else {
+		console.log("FOTS - Unknown equipment ID: " + eid);
+	}
+};
+
 fots.initialize = function() {
+	fots.currentUnit = new fots.unit();
 	// Setup event handlers
 	$("#hull").change(fots.funcs.baseHullChange);
 	$("#pst").change(fots.funcs.baseHullChange);
 	$("#hullStat").change(fots.funcs.finalHullChange);
+	$("#equipAdd").click(fots.funcs.addEquipment);
+	$("#name").blur(fots.funcs.updateName);
 
 	// Initialize values and other inputs
 	$.each(fots.core.pst,function(key,value) {
@@ -133,8 +152,6 @@ fots.initialize = function() {
 	
 	$("#pst").val("3");
 	$("#hull").change();
-
-	fots.ui.build(fots.equipment[201410041610],"#equipment");
 };
 
 // robocopy . c:\xampp\htdocs\fots /E /XF .git* /XD .git
